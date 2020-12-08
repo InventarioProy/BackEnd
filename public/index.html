@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema</title>
+</head>
+<body>
+    <h1>Categoria</h1>
+<table border="2" width="80%">
+    <tr>
+        <td>Funcion</td>
+        <td>Metodo HTTP</td>
+        <td>URL</td>
+        <td>Parametros</td>
+    </tr>
+
+    <tr>
+        <td>Guardar datos</td>
+        <td>POST</td>
+        <td>http://localhost:3000/api/categoria/add</td>
+        <td>
+            <pre>
+                <strong>Body</strong>
+                nombre(string-50)
+                descripcion(string-255)
+            </pre>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Buscar un registro</td>
+        <td>GET</td>
+        <td>http://localhost:3000/api/categoria/query?_id=</td>
+        <td>
+            <pre>
+                <strong>Query</strong>
+                ?_id=texto
+            </pre>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Lista de todos los registros</td>
+        <td>GET</td>
+        <td>http://localhost:3000/api/categoria/list</td>
+        <td>
+            <pre>
+                <strong>Query</strong>
+
+            </pre>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Actualiza un registro</td>
+        <td>PUT</td>
+        <td>http://localhost:3000/api/categoria/update</td>
+        <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+                nombre(string-50)
+                descripcion(String-255)
+            </pre>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Elimina un registro</td>
+        <td>DELETE</td>
+        <td>http://localhost:3000/api/categoria/remove</td>
+        <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+            </pre>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Activa un registro</td>
+        <td>PUT</td>
+        <td>http://localhost:3000/api/categoria/activate</td>
+        <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+            </pre>
+        </td>
+    </tr>
+
+    <tr>
+        <td>deactivate una Categoria</td>
+        <td>PUT</td>
+        <td>http://localhost:3000/api/categoria/deactivate</td>
+        <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+            </pre>
+        </td>
+    </tr>
+</table>
+
+    <h1>Usuario</h1>
+    <table border="2" width="80%">
+        <tr>
+            <td>Funcion</td>
+            <td>Metodo HTTP</td>
+            <td>URL</td>
+            <td>Parametros</td>
+        </tr>
+
+        <tr>
+            <td>Guardar datos</td>
+            <td>POST</td>
+            <td>http://localhost:3000/api/usuario/add</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+                rol(string-30)
+                nombre(string-50)
+                ci(string-20)
+                usuario(string-50)
+                password(string-64)
+                telefono(string-20)
+                email(string-64)
+                foto(string-100)
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Buscar un registro</td>
+            <td>GET</td>
+            <td>http://localhost:3000/api/usuario/query?_id=</td>
+            <td>
+            <pre>
+                <strong>Query</strong>
+                ?_id=texto
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Lista de todos los registros</td>
+            <td>GET</td>
+            <td>http://localhost:3000/api/usuario/list?valor=</td>
+            <td>
+            <pre>
+                <strong>Query</strong>
+                    valor=cualquier cosa para buscar
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Actualiza un registro</td>
+            <td>PUT</td>
+            <td>http://localhost:3000/api/usuario/update</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+                rol(string-30)
+                nombre(string-50)
+                ci(string-20)
+                usuario(string-50)
+                password(string-64)
+                telefono(string-20)
+                email(string-64)
+                foto(string-100)
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Elimina un registro</td>
+            <td>DELETE</td>
+            <td>http://localhost:3000/api/usuario/remove</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Activa un registro</td>
+            <td>PUT</td>
+            <td>http://localhost:3000/api/usuario/activate</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>deactivate una Categoria</td>
+            <td>PUT</td>
+            <td>http://localhost:3000/api/usuario/deactivate</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+            </pre>
+            </td>
+        </tr>
+    </table>
+
+    <h1>Producto</h1>
+    <table border="2" width="80%">
+        <tr>
+            <td>Funcion</td>
+            <td>Metodo HTTP</td>
+            <td>URL</td>
+            <td>Parametros</td>
+        </tr>
+
+        <tr>
+            <td>Guardar datos</td>
+            <td>POST</td>
+            <td>http://localhost:3000/api/producto/add</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+                categoria(_id:categoria)
+                nombre(string)
+                codigo(string)
+                descripcion(string)
+                imagen(string)
+                stock(number)
+                precio_compra(number)
+                precio_venta(number)
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Buscar un registro</td>
+            <td>GET</td>
+            <td>http://localhost:3000/api/producto/query?_id=</td>
+            <td>
+            <pre>
+                <strong>Query</strong>
+                ?_id=texto
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Lista de todos los registros</td>
+            <td>GET</td>
+            <td>http://localhost:3000/api/producto/list?valor=</td>
+            <td>
+            <pre>
+                <strong>Query</strong>
+                    valor=cualquier cosa para buscar
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Actualiza un registro</td>
+            <td>PUT</td>
+            <td>http://localhost:3000/api/producto/update</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+                categoria(_id:categoria)
+                nombre(string)
+                codigo(string)
+                descripcion(string)
+                imagen(string)
+                stock(number)
+                precio_compra(number)
+                precio_venta(number)
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Elimina un registro</td>
+            <td>DELETE</td>
+            <td>http://localhost:3000/api/producto/remove</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Activa un registro</td>
+            <td>PUT</td>
+            <td>http://localhost:3000/api/producto/activate</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>deactivate una Categoria</td>
+            <td>PUT</td>
+            <td>http://localhost:3000/api/producto/deactivate</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+            </pre>
+            </td>
+        </tr>
+    </table>
+
+    <h1>Persona</h1>
+    <table border="2" width="80%">
+        <tr>
+            <td>Funcion</td>
+            <td>Metodo HTTP</td>
+            <td>URL</td>
+            <td>Parametros</td>
+        </tr>
+
+        <tr>
+            <td>Guardar datos</td>
+            <td>POST</td>
+            <td>http://localhost:3000/api/persona/add</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+ {
+    "tipo_persona":"proveedor",
+    "nombre":"teclados srl",
+    "ci":"12345678",
+    "telefono":"12345678",
+    "email":"sral@sral.com"
+}
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Buscar un registro</td>
+            <td>GET</td>
+            <td>http://localhost:3000/api/persona/query?_id=</td>
+            <td>
+            <pre>
+                <strong>Query</strong>
+                ?_id=texto
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Lista de todos los registros</td>
+            <td>GET</td>
+            <td>http://localhost:3000/api/persona/list?valor=</td>
+            <td>
+            <pre>
+                <strong>Query</strong>
+                    valor=cualquier cosa para buscar
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Lista de todos los clientes</td>
+            <td>GET</td>
+            <td>http://localhost:3000/api/persona/listClientes?valor=</td>
+            <td>
+            <pre>
+                <strong>Query</strong>
+                    valor=cualquier cosa para buscar
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Lista de todos los proveedores</td>
+            <td>GET</td>
+            <td>http://localhost:3000/api/persona/listProveedores?valor=</td>
+            <td>
+            <pre>
+                <strong>Query</strong>
+                    valor=cualquier cosa para buscar
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Actualiza un registro</td>
+            <td>PUT</td>
+            <td>http://localhost:3000/api/persona/update</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+                tipo_persona(String)
+                nombre(string)
+                ci(string)
+                telefono(string)
+                email(string)
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Elimina un registro</td>
+            <td>DELETE</td>
+            <td>http://localhost:3000/api/persona/remove</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Activa un registro</td>
+            <td>PUT</td>
+            <td>http://localhost:3000/api/persona/activate</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>deactivate una Categoria</td>
+            <td>PUT</td>
+            <td>http://localhost:3000/api/persona/deactivate</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+            </pre>
+            </td>
+        </tr>
+    </table>
+
+    <h1>Ingreso</h1>
+    <table border="2" width="80%">
+        <tr>
+            <td>Funcion</td>
+            <td>Metodo HTTP</td>
+            <td>URL</td>
+            <td>Parametros</td>
+        </tr>
+
+        <tr>
+            <td>Guardar datos</td>
+            <td>POST</td>
+            <td>http://localhost:3000/api/ingreso/add</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+                    <pre>
+ {
+    "usuario":{"_id":"5f94fbc23703840fc00fd628"},
+    "persona":{"_id":"5f95273da7744b074087ef44"},
+    "tipo_comprobante":"Factura",
+    "serie_comprobante":"001",
+    "num_comprobante":"00002",
+    "impuesto":"0.18",
+    "total":"120",
+    "detalles":[
+        {
+        "_id":"5f950f6adf046227c8f06cd2",
+        "producto":"impresora epson",
+        "cantidad":"2",
+        "precio":"30"
+        },
+        {
+        "_id":"5f950f9edf046227c8f06cd3",
+        "producto":"teclano mecanico v2",
+        "cantidad":"2",
+        "precio":"30"
+        }
+    ]
+}
+
+                    </pre>
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Buscar un registro</td>
+            <td>GET</td>
+            <td>http://localhost:3000/api/ingreso/query?_id=</td>
+            <td>
+            <pre>
+                <strong>Query</strong>
+                ?_id=texto
+            </pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Consulta entre dos fechas</td>
+            <td>GET</td>
+            <td>http://localhost:3000/api/ingreso/consultaFechas</td>
+            <td>
+            <pre>
+                <strong>Query</strong>
+                    valor=cualquier cosa para buscar
+            </pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Buscar un registro</td>
+            <td>GET</td>
+            <td>http://localhost:3000/api/ingreso/query?queryCodigo=</td>
+            <td>
+            <pre>
+                <strong>Query</strong>
+                ?queryCodigo=texto
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Lista de todos los registros</td>
+            <td>GET</td>
+            <td>http://localhost:3000/api/persona/list?valor=</td>
+            <td>
+            <pre>
+                <strong>Query</strong>
+                    valor=cualquier cosa para buscar
+            </pre>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>Activa un registro</td>
+            <td>PUT</td>
+            <td>http://localhost:3000/api/persona/activate</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>deactivate una Categoria</td>
+            <td>PUT</td>
+            <td>http://localhost:3000/api/persona/deactivate</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+            </pre>
+            </td>
+        </tr>
+    </table>
+
+
+    <h1>Salida</h1>
+    <table border="2" width="80%">
+        <tr>
+            <td>Funcion</td>
+            <td>Metodo HTTP</td>
+            <td>URL</td>
+            <td>Parametros</td>
+        </tr>
+
+        <tr>
+            <td>Guardar datos</td>
+            <td>POST</td>
+            <td>http://localhost:3000/api/salida/add</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+                    <pre>
+ {
+    "usuario":{"_id":"5f94fbc23703840fc00fd628"},
+    "persona":{"_id":"5f95273da7744b074087ef44"},
+    "tipo_comprobante":"Factura",
+    "serie_comprobante":"001",
+    "num_comprobante":"00002",
+    "impuesto":"0.18",
+    "total":"120",
+    "detalles":[
+        {
+        "_id":"5f950f6adf046227c8f06cd2",
+        "producto":"impresora epson",
+        "cantidad":"2",
+        "precio":"30",
+        "descuento":"0"
+        },
+        {
+        "_id":"5f950f9edf046227c8f06cd3",
+        "producto":"teclano mecanico v2",
+        "cantidad":"2",
+        "precio":"30",
+        "descuento":"0"
+        }
+    ]
+}
+
+                    </pre>
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Buscar un registro</td>
+            <td>GET</td>
+            <td>http://localhost:3000/api/salida/query?_id=</td>
+            <td>
+            <pre>
+                <strong>Query</strong>
+                ?_id=texto
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Lista de todos los registros</td>
+            <td>GET</td>
+            <td>http://localhost:3000/api/salida/list?valor=</td>
+            <td>
+            <pre>
+                <strong>Query</strong>
+                    valor=cualquier cosa para buscar
+            </pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Consulta entre dos fechas</td>
+            <td>GET</td>
+            <td>http://localhost:3000/api/salida/consultaFechas</td>
+            <td>
+            <pre>
+                <strong>Query</strong>
+                    valor=cualquier cosa para buscar
+            </pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Para graficos de los 12 meses</td>
+            <td>GET</td>
+            <td>http://localhost:3000/api/salida/grafico12meses</td>
+            <td>
+            <pre>
+                <strong>Query</strong>
+                    valor=cualquier cosa para buscar
+            </pre>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>Activa un registro</td>
+            <td>PUT</td>
+            <td>http://localhost:3000/api/salida/activate</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+            </pre>
+            </td>
+        </tr>
+
+        <tr>
+            <td>deactivate una Categoria</td>
+            <td>PUT</td>
+            <td>http://localhost:3000/api/salida/deactivate</td>
+            <td>
+            <pre>
+                <strong>Body</strong>
+               _id(string)
+            </pre>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
