@@ -1,4 +1,5 @@
 import models from '../models';
+import fs from 'fs';
 var ObjectId = require('mongodb').ObjectID;
 
 export default {
@@ -51,6 +52,14 @@ export default {
     },
     add: async (request, response, next) => {
         try {
+            var image = request.body.imagen;
+            var data = image.replace(/^data:image\/\w+;base64,/, '');
+
+            var NombreImagen="Storage/images/products/" +request.body.codigo+'.jpg';
+            fs.writeFile(NombreImagen, data, 'base64', (err)=>{
+                console.log(err)
+            });
+            request.body.imagen=NombreImagen;
             const reg = await models.Producto.create(request.body);
             response.status(200).json(reg);
         } catch (e) {

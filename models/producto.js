@@ -7,7 +7,7 @@ const productoSchema = new Schema({
     descripcion:{type:String},
     imagen:{type:String,default:'esto es una imagen'},
     stock_min:{type:Number},
-    precio_compra:{type:Number},
+    precio_compra:  {type:Number},
     precio_venta:{type:Number},
     estado:{type:Number,default:1},
     createdAt:{type:Date,default: Date.now()}
