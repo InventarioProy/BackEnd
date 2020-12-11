@@ -38,7 +38,7 @@ export default {
                     {'ci': new RegExp(valor, 'i')},
                     {'email': new RegExp(valor, 'i')},
                     {'telefono': new RegExp(valor, 'i')},
-                ]},{createdAt: 0}).sort({'nombre':1});
+                ]}).sort({'createdAt':1});
             response.status(200).json(reg);
         } catch (e) {
             response.status(500).send({
@@ -72,7 +72,7 @@ export default {
                     {'ci': new RegExp(valor, 'i')},
                     {'email': new RegExp(valor, 'i')},
                     {'telefono': new RegExp(valor, 'i')},
-                ],'tipo_persona':'Proveedor'},{createdAt: 0}).sort({'nombre':1});
+                ],'tipo_persona':'Proveedor'}).sort({'nombre':1});
             response.status(200).json(reg);
         } catch (e) {
             response.status(500).send({

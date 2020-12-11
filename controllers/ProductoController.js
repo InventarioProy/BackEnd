@@ -118,7 +118,7 @@ export default {
             const reg=await models.Producto.find({$or:[
                     {'codigo': new RegExp(valor, 'i')},
                     {'descripcion': new RegExp(valor, 'i')}
-                ]},{createdAt: 0}).sort({'nombre':1})
+                ]}).sort({'createdAt':-1})
                 .populate('categoria',{nombre:1})
                 .populate('marca',{nombre:1});//lo que se filtre de categoria, que campos se mostrara
 

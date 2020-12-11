@@ -4,6 +4,8 @@ import cors from 'cors';
 import path from 'path';
 import mongoose from 'mongoose';
 import router from "./routes";
+import bodyParser from "body-parser";
+
 
 //conexion a la base de datos
 mongoose.Promise=global.Promise;
@@ -17,6 +19,8 @@ db.once('open', function() {
 });
 
 const app=express();
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(morgan('dev'));
 app.use(cors());
 
